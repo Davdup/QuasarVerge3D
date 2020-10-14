@@ -1,6 +1,11 @@
+
 # Quasar App (quasartestverge3d)
 
 A Quasar Framework app
+
+## First attempt at integrating a Verge3D scene into a Quasar App
+More information about Quasar framework can be found here: https://quasar.dev/
+Once files have been downloaded, cd to the directory, and run the following commands:
 
 ## Install the dependencies
 ```bash
