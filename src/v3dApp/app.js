@@ -7,13 +7,15 @@ var REL_URL_PREFIX = 'v3dApp/';
 
 var LOAD_LOGIC_FILES = false;
 
-function createApp () {
+function createApp (sceneFile) {
 
     var params = v3d.AppUtils.getPageParams();
+    var fullPath = '__URL__' + sceneFile
+    console.log(fullPath);
 
     var PUZZLES_DIR = '/puzzles/';
     var logicURL = params.logic ? params.logic : '__LOGIC__visual_logic.js'.replace('__LOGIC__', REL_URL_PREFIX);
-    var sceneURL = params.load ? params.load : '__URL__app.gltf'.replace('__URL__', REL_URL_PREFIX);
+    var sceneURL = params.load ? params.load : fullPath.replace('__URL__', REL_URL_PREFIX);
     if (!sceneURL) {
         console.log('No scene URL specified');
         return;

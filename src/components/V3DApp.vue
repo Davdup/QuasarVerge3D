@@ -42,7 +42,7 @@ export default {
 
 
   mounted: function () {
-    V3DApp.createApp();
+    V3DApp.createApp('app.gltf');
     //V3DApp;
     console.log("test :", this.test);
     console.log("alert :", alert);
