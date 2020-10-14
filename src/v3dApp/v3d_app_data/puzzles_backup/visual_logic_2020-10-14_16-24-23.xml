@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="init" type="InitTab" active="false" scrollx="875" scrolly="453.5" scale="0.9"></tab>
-  <tab name="main" type="MainTab" active="true" scrollx="923.604736328125" scrolly="424.5169372558594" scale="1">
+  <tab name="main" type="MainTab" active="true" scrollx="923.6048583984375" scrolly="424.5168762207031" scale="1">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="P8z{U.1q*]NCr?Vm%b9o" type="">alert</variable>
     </variables>
@@ -60,7 +60,7 @@
                     </shadow>
                     <block type="textMultiline" id="#Yc2RsIu+c/6mH}gG~?O">
                       <field name="HIGHLIGHT_MODE">javascript</field>
-                      <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text in console')&#10;return testVar&#10;</field>
+                      <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text')&#10;return testVar&#10;</field>
                     </block>
                   </value>
                 </block>
