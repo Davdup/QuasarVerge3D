@@ -47,6 +47,9 @@ export default {
   mounted: function () {
     v3d.PL = v3d.PL || {};
     v3d.PL._vueEventBus = eventBus;
+    eventBus.$on('cube-clicked', data => {
+      this.alert = true;
+    });
 
     V3DApp.createApp('app.gltf');
     //V3DApp;

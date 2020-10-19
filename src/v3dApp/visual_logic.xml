@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <tab name="init" type="InitTab" active="false" scrollx="875" scrolly="453.5" scale="0.9"></tab>
-  <tab name="main" type="MainTab" active="true" scrollx="923.604736328125" scrolly="424.5169372558594" scale="1">
+  <tab name="init" type="InitTab" active="false" scrollx="810.00537109375" scrolly="450.5105895996094" scale="1"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="784.648193359375" scrolly="372.05047607421875" scale="1">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="P8z{U.1q*]NCr?Vm%b9o" type="">alert</variable>
     </variables>
@@ -12,8 +12,12 @@
         </block>
       </value>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="HC;ds)ma`k^knkv]64g=" x="-850" y="-70">
-      <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="HC;ds)ma`k^knkv]64g=" x="-770" y="-230">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
       <value name="VALUE">
         <block type="objectList" id="PF?:,dC{]~@?tjU,/I[7">
           <field name="FIELDNAME">Cube</field>
@@ -40,29 +44,39 @@
             </block>
           </value>
           <next>
-            <block type="variables_set" id="]jdWpQ^Dg9fEZT4VENZX">
-              <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
-              <value name="VALUE">
-                <block type="logic_negate" id="w0Qlq`5r2n+Ii)2*I{Em">
-                  <value name="BOOL">
-                    <block type="variables_get" id="x6SKrr~@~HVe-MUXbG]U">
-                      <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
-                    </block>
-                  </value>
-                </block>
+            <block type="execScript" id="8JWqWXq[La+jWy.U_FLF">
+              <value name="TEXT">
+                <shadow type="textMultiline" id="U5tVp#sik|tkd{awyaE!">
+                  <field name="HIGHLIGHT_MODE">javascript</field>
+                  <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;v3d.PL._vueEventBus.$emit('cube-clicked');</field>
+                </shadow>
               </value>
               <next>
-                <block type="execScript" id="Q;=:^}0x))%Rrzbnwo@N">
-                  <value name="TEXT">
-                    <shadow type="textMultiline" id="pyPM|pb;20^eRl;]iK/*">
-                      <field name="HIGHLIGHT_MODE">javascript</field>
-                      <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)</field>
-                    </shadow>
-                    <block type="textMultiline" id="#Yc2RsIu+c/6mH}gG~?O">
-                      <field name="HIGHLIGHT_MODE">javascript</field>
-                      <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text in console')&#10;return testVar&#10;</field>
+                <block type="variables_set" id="]jdWpQ^Dg9fEZT4VENZX" disabled="true">
+                  <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
+                  <value name="VALUE">
+                    <block type="logic_negate" id="w0Qlq`5r2n+Ii)2*I{Em">
+                      <value name="BOOL">
+                        <block type="variables_get" id="x6SKrr~@~HVe-MUXbG]U">
+                          <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
+                        </block>
+                      </value>
                     </block>
                   </value>
+                  <next>
+                    <block type="execScript" id="Q;=:^}0x))%Rrzbnwo@N" disabled="true">
+                      <value name="TEXT">
+                        <shadow type="textMultiline" id="pyPM|pb;20^eRl;]iK/*">
+                          <field name="HIGHLIGHT_MODE">javascript</field>
+                          <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)</field>
+                        </shadow>
+                        <block type="textMultiline" id="#Yc2RsIu+c/6mH}gG~?O">
+                          <field name="HIGHLIGHT_MODE">javascript</field>
+                          <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text in console')&#10;return testVar&#10;</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
                 </block>
               </next>
             </block>
