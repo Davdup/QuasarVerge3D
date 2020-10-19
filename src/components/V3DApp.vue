@@ -26,8 +26,12 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
 import * as V3DApp from "../v3dApp/app.js";
 import * as LOGIC from "../v3dApp/visual_logic.js";
+
+const eventBus = new Vue();
 
 export default {
   name: "V3DApp",
@@ -40,8 +44,13 @@ export default {
     };
   },
 
-
   mounted: function () {
+    v3d.PL = v3d.PL || {};
+    v3d.PL._vueEventBus = eventBus;
+    eventBus.$on('cube-clicked', data => {
+      this.alert = true;
+    });
+
     V3DApp.createApp('app.gltf');
     //V3DApp;
     console.log("test :", this.test);
