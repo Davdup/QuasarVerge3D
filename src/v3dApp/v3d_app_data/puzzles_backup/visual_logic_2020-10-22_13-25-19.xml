@@ -1,16 +1,13 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="init" type="InitTab" active="false" scrollx="810.00537109375" scrolly="450.5105895996094" scale="1"></tab>
-  <tab name="main" type="MainTab" active="true" scrollx="859.2545166015625" scrolly="882.0011596679688" scale="0.6309181435858824">
+  <tab name="main" type="MainTab" active="true" scrollx="764.4854125976562" scrolly="720.1990356445312" scale="0.7819985228212928">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="(5Ip@FjV6rq|0Zy^AmuC" type="">cubeAnimState</variable>
-      <variable id="P~JKlc*aY:?1w=go6xB/" type="">obj</variable>
-      <variable id="CKWCse*AO`AXE%=x::tf" type="">btnId</variable>
-      <variable id="58:/7Wrh4|t,e=fA;1iG" type="">varName</variable>
       <variable id="]nV)8,k)`JPbvyH`M_by" type="">sphereAnimState</variable>
       <variable id="8XbZ%o92K%-$_MF,QS23" type="">hoveredObject</variable>
       <variable id="P8z{U.1q*]NCr?Vm%b9o" type="">pickedObject</variable>
     </variables>
-    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="3nwI[Ce_*q4J[KoZG,i:" x="-370" y="-1290">
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="3nwI[Ce_*q4J[KoZG,i:" x="-770" y="-1050">
       <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
       <value name="VALUE">
         <block type="math_number" id="pF0%ImEG/y02vG6MNRo7">
@@ -28,154 +25,97 @@
         </block>
       </next>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_callnoreturn" id="(e$7.pyN+R2_V22d%^7y" x="-370" y="-1170">
-      <mutation name="play_anim">
-        <arg name="obj"/>
-        <arg name="btnId"/>
-        <arg name="varName"/>
-      </mutation>
-      <value name="ARG0">
-        <block type="animationList" id="BH]JvOi|RwQ;1jFeCm:3">
-          <field name="FIELDNAME">Cube</field>
-        </block>
-      </value>
-      <value name="ARG1">
-        <block type="text" id="EdYU1,IbDirZPkhYe0Aq">
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id=")4FzKjvfw0m`p7t-2C`]" x="-770" y="-890">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="v6}DDnG#0!?En4tpvtgZ">
           <field name="TEXT">btnAnimCube</field>
         </block>
       </value>
-      <value name="ARG2">
-        <block type="variables_get" id="#xnp/spc_]DI_dSfdi,y">
-          <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
-        </block>
-      </value>
-      <next>
-        <block type="procedures_callnoreturn" id="H3-M^_NjD(b]zibN_#c`">
-          <mutation name="play_anim">
-            <arg name="obj"/>
-            <arg name="btnId"/>
-            <arg name="varName"/>
-          </mutation>
-          <value name="ARG0">
-            <block type="animationList" id="2KFJ)UI:Lv4XOeVnf!fP">
-              <field name="FIELDNAME">Sphere</field>
+      <statement name="DO">
+        <block type="controls_ifelse" id="/T4@-*S~H6G9zwbRfA*x">
+          <value name="IF0">
+            <block type="logic_compare" id="@k{c#xAmA8^7l]X:JMib">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="99%PSfq?`VX9w,V,2(Pe">
+                  <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="blUdQi}stK+abSD}Ic5_">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
             </block>
           </value>
-          <value name="ARG1">
-            <block type="text" id="2K|icv2eZ^US!+jWhtnP">
-              <field name="TEXT">btnAnimSphere</field>
-            </block>
-          </value>
-          <value name="ARG2">
-            <block type="variables_get" id="?=9!Scb|)5#I0sntX1+l">
-              <field name="VAR" id="]nV)8,k)`JPbvyH`M_by">sphereAnimState</field>
-            </block>
-          </value>
-        </block>
-      </next>
-    </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="m=y_rB5Icg@!8zQ:;kFh" x="-1230" y="-1110">
-      <mutation>
-        <arg name="obj" varid="P~JKlc*aY:?1w=go6xB/"/>
-        <arg name="btnId" varid="CKWCse*AO`AXE%=x::tf"/>
-        <arg name="varName" varid="58:/7Wrh4|t,e=fA;1iG"/>
-      </mutation>
-      <field name="NAME">play_anim</field>
-      <comment pinned="false" h="80" w="160">Describe this function...</comment>
-      <statement name="STACK">
-        <block type="eventHTMLElem" id=")4FzKjvfw0m`p7t-2C`]">
-          <field name="EVENT">click</field>
-          <field name="PARENT">TRUE</field>
-          <value name="ID">
-            <block type="variables_get" id="~V^0dRRuYktEcPj}su4k">
-              <field name="VAR" id="CKWCse*AO`AXE%=x::tf">btnId</field>
-            </block>
-          </value>
-          <statement name="DO">
-            <block type="controls_ifelse" id="/T4@-*S~H6G9zwbRfA*x">
-              <value name="IF0">
-                <block type="logic_compare" id="@k{c#xAmA8^7l]X:JMib">
-                  <field name="OP">EQ</field>
-                  <value name="A">
-                    <block type="variables_get" id="99%PSfq?`VX9w,V,2(Pe">
-                      <field name="VAR" id="58:/7Wrh4|t,e=fA;1iG">varName</field>
+          <statement name="DO0">
+            <block type="playAnimationAdv" id="GKLj7{%IRi1%=cG[z41]">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <block type="animationList" id="2KFJ)UI:Lv4XOeVnf!fP">
+                  <field name="FIELDNAME">Sphere</field>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="p8.b_yo@(qo?fkcE+8[^">
+                  <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
+                  <value name="VALUE">
+                    <block type="math_number" id="xzu~!s^H`:cQw7^V`[@%">
+                      <field name="NUM">1</field>
                     </block>
                   </value>
-                  <value name="B">
-                    <block type="math_number" id="blUdQi}stK+abSD}Ic5_">
+                  <next>
+                    <block type="console.log" id="?R@wx(/h{o.TK9+w^B@^">
+                      <value name="VALUE">
+                        <shadow type="text" id="t=ym`=N(ELnV:0qzb%[b">
+                          <field name="TEXT">Hello, Verge!</field>
+                        </shadow>
+                        <block type="variables_get" id="8Qmw~h$8vJjU!G~-MOf=">
+                          <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="playAnimationAdv" id="L`dj:AW3:dJ`vZnr5.S8">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">TRUE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <block type="animationList" id="BH]JvOi|RwQ;1jFeCm:3">
+                  <field name="FIELDNAME">Sphere</field>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id=")NNo+w5q8Sh*fOlz)x$|">
+                  <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
+                  <value name="VALUE">
+                    <block type="math_number" id=":cSPY]_M|uhSt3drg/*!">
                       <field name="NUM">0</field>
                     </block>
                   </value>
-                </block>
-              </value>
-              <statement name="DO0">
-                <block type="playAnimationAdv" id="GKLj7{%IRi1%=cG[z41]">
-                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
-                  <field name="REVERSED">FALSE</field>
-                  <field name="LOOP">LoopOnce</field>
-                  <value name="VALUE">
-                    <block type="variables_get" id="9Q]bOOt*bn-+a+XdYT?i">
-                      <field name="VAR" id="P~JKlc*aY:?1w=go6xB/">obj</field>
-                    </block>
-                  </value>
                   <next>
-                    <block type="variables_set" id="p8.b_yo@(qo?fkcE+8[^">
-                      <field name="VAR" id="58:/7Wrh4|t,e=fA;1iG">varName</field>
+                    <block type="console.log" id="|n_M(P5bZ_mb.7?EkYlr">
                       <value name="VALUE">
-                        <block type="math_number" id="xzu~!s^H`:cQw7^V`[@%">
-                          <field name="NUM">1</field>
+                        <shadow type="text">
+                          <field name="TEXT">Hello, Verge!</field>
+                        </shadow>
+                        <block type="variables_get" id="56Q9VG2lu#%#y`pv#tke">
+                          <field name="VAR" id="(5Ip@FjV6rq|0Zy^AmuC">cubeAnimState</field>
                         </block>
                       </value>
-                      <next>
-                        <block type="console.log" id="?R@wx(/h{o.TK9+w^B@^">
-                          <value name="VALUE">
-                            <shadow type="text" id="t=ym`=N(ELnV:0qzb%[b">
-                              <field name="TEXT">Hello, Verge!</field>
-                            </shadow>
-                            <block type="variables_get" id="8Qmw~h$8vJjU!G~-MOf=">
-                              <field name="VAR" id="58:/7Wrh4|t,e=fA;1iG">varName</field>
-                            </block>
-                          </value>
-                        </block>
-                      </next>
                     </block>
                   </next>
                 </block>
-              </statement>
-              <statement name="ELSE">
-                <block type="playAnimationAdv" id="L`dj:AW3:dJ`vZnr5.S8">
-                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
-                  <field name="REVERSED">TRUE</field>
-                  <field name="LOOP">LoopOnce</field>
-                  <value name="VALUE">
-                    <block type="variables_get" id="~hnnqk[:R}7t:nT:2:C(">
-                      <field name="VAR" id="P~JKlc*aY:?1w=go6xB/">obj</field>
-                    </block>
-                  </value>
-                  <next>
-                    <block type="variables_set" id=")NNo+w5q8Sh*fOlz)x$|">
-                      <field name="VAR" id="58:/7Wrh4|t,e=fA;1iG">varName</field>
-                      <value name="VALUE">
-                        <block type="math_number" id=":cSPY]_M|uhSt3drg/*!">
-                          <field name="NUM">0</field>
-                        </block>
-                      </value>
-                      <next>
-                        <block type="console.log" id="|n_M(P5bZ_mb.7?EkYlr">
-                          <value name="VALUE">
-                            <shadow type="text">
-                              <field name="TEXT">Hello, Verge!</field>
-                            </shadow>
-                            <block type="variables_get" id="56Q9VG2lu#%#y`pv#tke">
-                              <field name="VAR" id="58:/7Wrh4|t,e=fA;1iG">varName</field>
-                            </block>
-                          </value>
-                        </block>
-                      </next>
-                    </block>
-                  </next>
-                </block>
-              </statement>
+              </next>
             </block>
           </statement>
         </block>

@@ -1,0 +1,103 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="810.00537109375" scrolly="450.5105895996094" scale="1"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="788.0368652343751" scrolly="414.5050659179687" scale="0.8139189460659926">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="P8z{U.1q*]NCr?Vm%b9o" type="">alert</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="logic_boolean" id="z7T!j;uip6qaz/zPKY)," x="-450" y="-310">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="objectList" id="V%cO37c`e*+4kDexMQ`j" x="-230" y="-270">
+      <field name="FIELDNAME">Cube</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="HC;ds)ma`k^knkv]64g=" x="-770" y="-230">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+      <value name="VALUE">
+        <block type="objectList" id="PF?:,dC{]~@?tjU,/I[7">
+          <field name="FIELDNAME">Cube</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="console.log" id="Zqa0{nPIX+3h:Rd`YRWe">
+          <value name="VALUE">
+            <shadow type="text" id="Cm6`MMpS%PyP%r7b##XJ">
+              <field name="TEXT">Hello, Verge!</field>
+            </shadow>
+            <block type="text_join" id="@q(^3eeWD(/)xDM4S`6*">
+              <mutation items="2"/>
+              <value name="ADD0">
+                <block type="objectList" id="WWoTyOdft2/*@QCtDg6!">
+                  <field name="FIELDNAME">Cube</field>
+                </block>
+              </value>
+              <value name="ADD1">
+                <block type="text" id="F/8OA*,tt2O_8g75}z5@">
+                  <field name="TEXT"> has been clicked!</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="variables_set" id="Le9_+]Kj;)XZ+C2T]MnA">
+              <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
+              <value name="VALUE">
+                <block type="text_join" id="/fr+#d5UZAut}:hC:8/.">
+                  <mutation items="2"/>
+                  <value name="ADD0">
+                    <block type="text" id="By)PN@2/K2E%q`1{[u,?">
+                      <field name="TEXT">cube</field>
+                    </block>
+                  </value>
+                  <value name="ADD1">
+                    <block type="text" id="kMdKY:+VF/*x1`~/e08@">
+                      <field name="TEXT">-clicked</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="execScript" id="8JWqWXq[La+jWy.U_FLF">
+                  <value name="TEXT">
+                    <shadow type="textMultiline" id="U5tVp#sik|tkd{awyaE!">
+                      <field name="HIGHLIGHT_MODE">javascript</field>
+                      <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;v3d.PL._vueEventBus.$emit(alert);</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="]jdWpQ^Dg9fEZT4VENZX" disabled="true">
+                      <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
+                      <value name="VALUE">
+                        <block type="logic_negate" id="w0Qlq`5r2n+Ii)2*I{Em">
+                          <value name="BOOL">
+                            <block type="variables_get" id="x6SKrr~@~HVe-MUXbG]U">
+                              <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">alert</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="execScript" id="Q;=:^}0x))%Rrzbnwo@N" disabled="true">
+                          <value name="TEXT">
+                            <shadow type="textMultiline" id="pyPM|pb;20^eRl;]iK/*">
+                              <field name="HIGHLIGHT_MODE">javascript</field>
+                              <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)</field>
+                            </shadow>
+                            <block type="textMultiline" id="#Yc2RsIu+c/6mH}gG~?O">
+                              <field name="HIGHLIGHT_MODE">javascript</field>
+                              <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text in console')&#10;return testVar&#10;</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="491.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

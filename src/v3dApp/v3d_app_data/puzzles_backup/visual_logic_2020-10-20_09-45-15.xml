@@ -1,0 +1,132 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="810.00537109375" scrolly="450.5105895996094" scale="1"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="780.0368652343751" scrolly="577.5050659179688" scale="0.8139189460659926">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="P8z{U.1q*]NCr?Vm%b9o" type="">pickedObject</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="=B1wZVxhZ;L)S9NPFK~9" x="-730" y="-490">
+      <value name="VALUE">
+        <block type="getObjectsFrom" id="kS]v`fo9:Q-O:8Hn(+6;">
+          <field name="TYPE">ALL</field>
+          <value name="OBJ">
+            <block type="groupList" id="`f9.^IjHYLJr![*:Bcxk">
+              <field name="FIELDNAME">Collection 1</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="setHTMLElemStyle" id="gL~dFmw*JU]E0Th@(Qti">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">FALSE</field>
+          <value name="VALUE">
+            <block type="text" id="g?Mt.#ZdJb1K[0EmcHVk">
+              <field name="TEXT">pointer</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="DOMObjectSelector" id="cPdMKsJIOJzfZsPbm%a0">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="setHTMLElemStyle" id="^+-_8{s}sD=.AvSUVkRi">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">FALSE</field>
+          <value name="VALUE">
+            <block type="text" id="6`iZ173+i9d+a}t#;:k*">
+              <field name="TEXT">default</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="DOMObjectSelector" id="K}Nk[+ssG#J15gtBlbd}">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="HC;ds)ma`k^knkv]64g=" x="-770" y="-230">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+      <value name="VALUE">
+        <block type="getObjectsFrom" id="L;omDbz^A~y/Xi+:qX3R">
+          <field name="TYPE">ALL</field>
+          <value name="OBJ">
+            <block type="groupList" id="p17j4MX0uE0Y+%Ab,d5a">
+              <field name="FIELDNAME">Collection 1</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="console.log" id="Zqa0{nPIX+3h:Rd`YRWe">
+          <value name="VALUE">
+            <shadow type="text" id="Cm6`MMpS%PyP%r7b##XJ">
+              <field name="TEXT">Hello, Verge!</field>
+            </shadow>
+            <block type="text_join" id="@q(^3eeWD(/)xDM4S`6*">
+              <mutation items="2"/>
+              <value name="ADD0">
+                <block type="pickedObject" id="/13Uf2(rGh9Qxzy%r{7!"/>
+              </value>
+              <value name="ADD1">
+                <block type="text" id="F/8OA*,tt2O_8g75}z5@">
+                  <field name="TEXT"> has been clicked!</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="variables_set" id="Le9_+]Kj;)XZ+C2T]MnA">
+              <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">pickedObject</field>
+              <value name="VALUE">
+                <block type="pickedObject" id="r~;5cIEwd/JYVDQ/b(Cb"/>
+              </value>
+              <next>
+                <block type="execScript" id="8JWqWXq[La+jWy.U_FLF">
+                  <value name="TEXT">
+                    <shadow type="textMultiline" id="U5tVp#sik|tkd{awyaE!">
+                      <field name="HIGHLIGHT_MODE">javascript</field>
+                      <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;v3d.PL._vueEventBus.$emit('Object-clicked', { id: VARS['pickedObject']});</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="]jdWpQ^Dg9fEZT4VENZX" disabled="true">
+                      <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">pickedObject</field>
+                      <value name="VALUE">
+                        <block type="logic_negate" id="w0Qlq`5r2n+Ii)2*I{Em">
+                          <value name="BOOL">
+                            <block type="variables_get" id="x6SKrr~@~HVe-MUXbG]U">
+                              <field name="VAR" id="P8z{U.1q*]NCr?Vm%b9o">pickedObject</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="execScript" id="Q;=:^}0x))%Rrzbnwo@N" disabled="true">
+                          <value name="TEXT">
+                            <shadow type="textMultiline" id="pyPM|pb;20^eRl;]iK/*">
+                              <field name="HIGHLIGHT_MODE">javascript</field>
+                              <field name="TEXT">// Built-in variables: app, v3d, VARS, PROC&#10;var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)</field>
+                            </shadow>
+                            <block type="textMultiline" id="#Yc2RsIu+c/6mH}gG~?O">
+                              <field name="HIGHLIGHT_MODE">javascript</field>
+                              <field name="TEXT">var testVar = VARS['alert']&#10;console.log('testVar = ', testVar)&#10;console.log('another text in console')&#10;return testVar&#10;</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="491.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

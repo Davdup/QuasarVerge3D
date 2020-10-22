@@ -1,16 +1,9 @@
 <template>
   <div id="app">
-    <V3DApp></V3DApp>
+    <h3>This is the index page</h3>
   </div>
 </template>
 
 <script>
-import V3DApp from '../components/V3DApp.vue';
 
-export default {
-  name: 'App',
-  components: {
-    V3DApp
-  }
-}
 </script>

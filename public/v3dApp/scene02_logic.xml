@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="init" type="InitTab" active="false" scrollx="810.00537109375" scrolly="450.5105895996094" scale="1"></tab>
-  <tab name="main" type="MainTab" active="true" scrollx="859.2545166015625" scrolly="882.0011596679688" scale="0.6309181435858824">
+  <tab name="main" type="MainTab" active="true" scrollx="948.5150146484375" scrolly="902.1987915039062" scale="0.6808137577915977">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="(5Ip@FjV6rq|0Zy^AmuC" type="">cubeAnimState</variable>
       <variable id="P~JKlc*aY:?1w=go6xB/" type="">obj</variable>
@@ -36,7 +36,7 @@
       </mutation>
       <value name="ARG0">
         <block type="animationList" id="BH]JvOi|RwQ;1jFeCm:3">
-          <field name="FIELDNAME">Cube</field>
+          <field name="FIELDNAME">Sphere01</field>
         </block>
       </value>
       <value name="ARG1">
@@ -58,7 +58,7 @@
           </mutation>
           <value name="ARG0">
             <block type="animationList" id="2KFJ)UI:Lv4XOeVnf!fP">
-              <field name="FIELDNAME">Sphere</field>
+              <field name="FIELDNAME">Sphere02</field>
             </block>
           </value>
           <value name="ARG1">

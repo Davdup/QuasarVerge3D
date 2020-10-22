@@ -1,26 +1,28 @@
 
-/* __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated */
-
 var CONTAINER_ID = 'v3d-container';
 
 var REL_URL_PREFIX = 'v3dApp/';
 
-var LOAD_LOGIC_FILES = false;
+var LOAD_LOGIC_FILES = true;
 
-function createApp (sceneFile) {
+function createApp (sceneFile, logicFile) {
 
     var params = v3d.AppUtils.getPageParams();
-    var fullPath = '__URL__' + sceneFile
-    console.log(fullPath);
+    var scenePath = '__URL__' + sceneFile
+    var logicPath = '__LOGIC__' + logicFile
+
 
     var PUZZLES_DIR = '/puzzles/';
-    var logicURL = params.logic ? params.logic : '__LOGIC__visual_logic.js'.replace('__LOGIC__', REL_URL_PREFIX);
-    var sceneURL = params.load ? params.load : fullPath.replace('__URL__', REL_URL_PREFIX);
+    var logicURL = params.logic ? params.logic : logicPath.replace('__LOGIC__', REL_URL_PREFIX);
+    var sceneURL = params.load ? params.load : scenePath.replace('__URL__', REL_URL_PREFIX);
     if (!sceneURL) {
         console.log('No scene URL specified');
         return;
     };
-    console.log(sceneURL);
+
+    console.log("sceneURL :", sceneURL);
+    console.log("logicURL :", logicURL);
+
 
     // some puzzles can benefit from cache
     v3d.Cache.enabled = true;
