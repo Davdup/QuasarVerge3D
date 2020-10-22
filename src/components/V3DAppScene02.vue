@@ -17,13 +17,13 @@
                 <div class="row justify-center" v-for="(anim, index) in anims" :key="index">
                   <div class="col q-pa-sm">{{ anim.name }}</div>
                   <div class="col">
-                    <q-btn
-                      :id="anim.btnId"
+                    <q-toggle v-model="anim.completed" :id="anim.btnId" />
+                    <!-- <q-btn
                       class="q-ma-xs"
                       :color="anim.completed ? 'text-white bg-green' : 'text-white bg-red'"
                       :label="anim.completed ? 'Open' : 'Close'"
                       @click="anim.completed=!anim.completed"
-                    />
+                    />-->
                   </div>
                 </div>
               </q-card-section>
@@ -53,15 +53,6 @@
                     />
                   </div>
                 </div>
-                <!-- <div>
-                  Cubes
-                  <span
-                    :class="infoModals.cubeModal ? 'text-white bg-green' : 'text-white bg-red'"
-                  >{{ infoModals.cubeModal }}</span> Sphere
-                  <span
-                    :class="infoModals.sphereModal ? 'text-white bg-green' : 'text-white bg-red'"
-                  >{{ infoModals.sphereModal }}</span>
-                </div>-->
               </q-card-section>
             </q-card>
           </q-expansion-item>

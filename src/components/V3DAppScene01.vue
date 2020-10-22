@@ -14,7 +14,7 @@
           >
             <q-card class="text-black bg-blue-2">
               <q-card-section>
-                <div class="row justify-center" v-for="anim in anims">
+                <div class="row justify-center" v-for="(anim, index) in anims" :key="index">
                   <div class="col q-pa-sm">{{ anim.name }}</div>
                   <div class="col">
                     <q-btn
@@ -41,7 +41,7 @@
           >
             <q-card class="text-black bg-blue-2">
               <q-card-section>
-                <div class="row justify-center" v-for="info in infos">
+                <div class="row justify-center" v-for="(info, index) in infos" :key="index">
                   <div class="col q-pa-sm">{{ info.name }}</div>
                   <div class="col">
                     <q-btn
@@ -71,18 +71,33 @@
 
     <!-- dialog box for Cube -->
     <q-dialog v-model="infoModals.Cube">
-      <q-card>
+      <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section>
           <div class="text-h6">This is a Cube</div>
         </q-card-section>
-        <q-separator inset />
 
-        <q-card-section
-          class="q-pt-none"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</q-card-section>
+        <q-separator />
+
+        <q-card-section class="q-pt-none scroll" style="max-height: 50vh">
+          <div class="q-pa-md q-gutter-sm">
+            <q-input ref="filter" filled v-model="filter" label="Filter">
+              <template v-slot:append>
+                <q-icon
+                  v-if="filter !== ''"
+                  name="clear"
+                  class="cursor-pointer"
+                  @click="resetFilter"
+                />
+              </template>
+            </q-input>
+            <q-tree :nodes="simple" node-key="label" :filter="filter" default-expand-all />
+          </div>
+        </q-card-section>
+
+        <q-separator />
 
         <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
+          <q-btn flat label="Close" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -153,6 +168,60 @@ export default {
           modalId: "Sphere",
         },
       ],
+      filter: "",
+      simple: [
+        {
+          label: "Satisfied customers",
+          children: [
+            {
+              label: "Good food",
+              children: [
+                { label: "Quality ingredients" },
+                { label: "Good recipe" },
+              ],
+            },
+            {
+              label: "Good service (disabled node)",
+              disabled: true,
+              children: [
+                { label: "Prompt attention" },
+                { label: "Professional waiter" },
+              ],
+            },
+            {
+              label: "Pleasant surroundings",
+              children: [
+                { label: "Happy atmosphere" },
+                { label: "Good table presentation" },
+                { label: "Pleasing decor" },
+              ],
+            },
+            {
+              label: "Good food 2",
+              children: [
+                { label: "Quality ingredients" },
+                { label: "Good recipe" },
+              ],
+            },
+            {
+              label: "Good service (disabled node) 2",
+              disabled: true,
+              children: [
+                { label: "Prompt attention" },
+                { label: "Professional waiter" },
+              ],
+            },
+            {
+              label: "Pleasant surroundings 2",
+              children: [
+                { label: "Happy atmosphere" },
+                { label: "Good table presentation" },
+                { label: "Pleasing decor" },
+              ],
+            },
+          ],
+        },
+      ],
     };
   },
 
@@ -199,6 +268,10 @@ export default {
     },
     showModal(modalId) {
       this.infoModals[modalId] = true;
+    },
+    resetFilter() {
+      this.filter = "";
+      this.$refs.filter.focus();
     },
   },
 };
